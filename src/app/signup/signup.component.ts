@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-// import { User } from "../core/models/user";
+import { PasswordValidation } from "../core/helper/password-validation";
 
 
 @Component({
@@ -51,8 +51,12 @@ export class SignupComponent implements OnInit {
       city: ['', Validators.required],
       state: ['', [Validators.required,Validators.minLength(2)]],
       zipcode: ['', [Validators.required,  Validators.minLength(5)]],
-      
-  });
+        
+  },
+  {
+    validator: PasswordValidation.MatchPassword 
+  }
+);
   }
 
      // convenience getter for easy access to form fields
