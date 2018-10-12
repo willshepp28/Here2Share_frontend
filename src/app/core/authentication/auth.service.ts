@@ -31,14 +31,22 @@ loginUser(user){
   return this.http.post<any>(this.url + "/login", user)
 }
 
-// logout User
-logoutUser(){}
+logout() {
+  // remove user from local storage to log user out
+  localStorage.removeItem('token');
+}
 
 
 // returns true if user is logged in
 loggedIn(){
   return !!localStorage.getItem('token');
 }
+
+
+// gets token for interceptor
+ getToken(): string {
+  return localStorage.getItem('token');
+};
 
 
 }
