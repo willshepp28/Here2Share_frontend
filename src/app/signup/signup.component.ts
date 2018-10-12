@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { PasswordValidation } from "../core/helper/password-validation";
+import { AuthService } from "../core/authentication/auth.service";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -33,10 +35,14 @@ export class SignupComponent implements OnInit {
   submitted = false;
 
 
-  constructor(   private formBuilder: FormBuilder) {
-   
-    
-   }
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
+
+
+  }
 
   ngOnInit() {
 
@@ -44,35 +50,45 @@ export class SignupComponent implements OnInit {
       firstName: ['', [Validators.required, Validators.minLength(4)]],
       lastName: ['', [Validators.required, Validators.minLength(4)]],
       username: ['', [Validators.required, Validators.minLength(4)]],
+      phone_number: ['', [Validators.required, Validators.minLength(10)]],
       password: ['', [Validators.required, Validators.minLength(4)]],
       confirmPassword: ['', [Validators.required, Validators.minLength(4)]],
       email: ['', [Validators.required, Validators.email]],
       address: ['', Validators.required],
       city: ['', Validators.required],
-      state: ['', [Validators.required,Validators.minLength(2)]],
-      zipcode: ['', [Validators.required,  Validators.minLength(5)]],
-        
-  },
-  {
-    validator: PasswordValidation.MatchPassword 
-  }
-);
-  }
+      state: ['', [Validators.required, Validators.minLength(2)]],
+      zipcode: ['', [Validators.required, Validators.minLength(5)]],
 
-     // convenience getter for easy access to form fields
-     get getFormControls() { return this.signupForm.controls; }
-
-     onSubmit() {
-      this.submitted = true;
-
-      // stop here if form is invalid
-      if (this.signupForm.invalid) {
-          return;
+    },
+      {
+        validator: PasswordValidation.MatchPassword
       }
+    );
+  }
 
-      console.log(this.signupForm.value);
+  // convenience getter for easy access to form fields
+  get getFormControls() { return this.signupForm.controls; }
 
-      
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.signupForm.invalid) {
+      return;
+    }
+
+    console.log(this.signupForm.value);
+
+    this.authService.signupUser(this.signupForm.value)
+      .subscribe(
+        response => {
+          // redirect to the login page
+          this.router.navigate(["/login"])
+        },
+        error => console.log(error)
+      )
+
+
   }
 
 }

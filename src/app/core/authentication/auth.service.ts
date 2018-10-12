@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
-  private url = "http://localhost:3000/api/v1";
+  private url = "http://localhost:3000/api/v1/auth";
 
   constructor(
     private http: HttpClient,
@@ -22,12 +22,14 @@ export class AuthService {
 
 // Signup User
 signupUser(user){
+  console.log(`User: ${user}`);
   return this.http.post<any>(this.url + "/signup", user);
 }
 
 
 // login User
 loginUser(user){
+
   return this.http.post<any>(this.url + "/login", user)
 }
 
