@@ -99,7 +99,7 @@
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-          <textarea matInput placeholder="Address" formControlName="address"></textarea>
+          <input matInput placeholder="Address" formControlName="address">
           <mat-error *ngIf="submitted && getFormControls.address.errors">
               <mat-error *ngIf="getFormControls.address.errors.required">Address is required</mat-error>
             </mat-error>
@@ -137,10 +137,9 @@
         </tr>
       </table>
 
-      <mat-card-actions>
-        <button type="submit" mat-raised-button color="primary">Primary</button>
-      </mat-card-actions>
 
+      <button type="submit" mat-raised-button color="primary">Submit</button>
+    
     </form>
 
 
