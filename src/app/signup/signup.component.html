@@ -16,7 +16,7 @@
   table.integer("userId").unsigned().references("id").inTable("users");
 }) -->
 
-<mat-card class="example-card">
+<mat-card class="example-card" fxLayout="column" fxLayout.xs="column" >
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>SignUp</mat-card-title>
@@ -29,7 +29,7 @@
 
 
       <table class="example-full-width" cellspacing="0">
-        <tr>
+        <tr fxLayout="row" fxLayout.xs="column">
 
           <!-- firstName -->
           <td>
@@ -44,7 +44,7 @@
 
 
           <!-- lastName -->
-          <td>
+          <td >
             <mat-form-field class="example-full-width">
               <input matInput placeholder="Last Name" formControlName="lastName">
               <mat-error *ngIf="submitted && getFormControls.lastName.errors">
@@ -55,7 +55,7 @@
           </td>
         </tr>
 
-        <tr>
+        <tr fxLayout="row" fxLayout.xs="column">
           <td>
             <mat-form-field class="example-full-width">
               <input type="text" matInput placeholder="Username" formControlName="username">
@@ -107,7 +107,7 @@
       </p>
 
       <table class="example-full-width" cellspacing="0">
-        <tr>
+        <tr fxLayout="row" fxLayout.xs="column">
           <td>
             <mat-form-field class="example-full-width">
               <input matInput placeholder="City" formControlName="city">

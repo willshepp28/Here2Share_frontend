@@ -13,3 +13,16 @@
     margin: 0 auto;
     margin-top: 80px;
   }
+
+
+  /* Targets the input fields in signup form */
+  ::ng-deep .mat-form-field-infix {
+    width: 100% !important;
+  }
+
+
+@media (max-width: 650px) {
+  .mat-card[_ngcontent-c5] {
+    width: 100%;
+  }
+}

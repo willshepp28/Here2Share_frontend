@@ -5,3 +5,17 @@
   .example-spacer {
     flex: 1 1 auto;
   }
+
+
+
+  .mat-menu-content {
+    background: rgb(0, 0, 0) !important;
+    /* color: rgb(255, 255, 255); */
+}
+
+
+/* 
+/deep/ .mat-menu-content span {
+  color: rgba(0,0,0,.54);
+
+} */
