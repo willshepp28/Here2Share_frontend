@@ -102,8 +102,8 @@
         <mat-form-field class="example-full-width">
             <input type="password" matInput placeholder="Phone Number" formControlName="phone_number">
             <mat-error *ngIf="submitted && getFormControls.phone_number.errors">
-                <mat-error *ngIf="getFormControls.confirmPassword.phone_number.required">Phone Numberis required</mat-error>
-                <mat-error *ngIf="getFormControls.confirmPassword.errors.minlength">Phone Number must be at least 10 characters</mat-error>
+                <mat-error *ngIf="getFormControls.phone_number.required">Phone Numberis required</mat-error>
+                <mat-error *ngIf="getFormControls.phone_number.errors.minlength">Phone Number must be at least 10 characters</mat-error>
               </mat-error>
           </mat-form-field>
 
