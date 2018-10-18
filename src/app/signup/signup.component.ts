@@ -47,22 +47,20 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
 
     this.signupForm = this.formBuilder.group({
-      firstName: ['', [Validators.required, Validators.minLength(4)]],
-      lastName: ['', [Validators.required, Validators.minLength(4)]],
+      
       username: ['', [Validators.required, Validators.minLength(4)]],
       phone_number: ['', [Validators.required, Validators.minLength(10)]],
       password: ['', [Validators.required, Validators.minLength(4)]],
-      confirmPassword: ['', [Validators.required, Validators.minLength(4)]],
       email: ['', [Validators.required, Validators.email]],
       address: ['', Validators.required],
       city: ['', Validators.required],
       state: ['', [Validators.required, Validators.minLength(2)]],
       zipcode: ['', [Validators.required, Validators.minLength(5)]],
 
-    },
-      {
-        validator: PasswordValidation.MatchPassword
-      }
+     }
+    //   {
+    //     validator: PasswordValidation.MatchPassword
+    //   }
     );
   }
 
@@ -70,6 +68,8 @@ export class SignupComponent implements OnInit {
   get getFormControls() { return this.signupForm.controls; }
 
   onSubmit() {
+
+    console.log("What is going on")
     this.submitted = true;
 
     // stop here if form is invalid
