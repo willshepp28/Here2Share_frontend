@@ -16,22 +16,23 @@
   table.integer("userId").unsigned().references("id").inTable("users");
 }) -->
 
+<!-- 
 <mat-card class="example-card" fxLayout="column" fxLayout.xs="column" >
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>SignUp</mat-card-title>
   </mat-card-header>
-  <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+
   <mat-card-content>
 
-    <!-- Form -->
+
     <form class="example-form" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
 
 
       <table class="example-full-width" cellspacing="0">
         <tr fxLayout="row" fxLayout.xs="column">
 
-          <!-- firstName -->
+       
           <td>
             <mat-form-field class="example-full-width">
               <input type="text" matInput placeholder="First name" formControlName="firstName">
@@ -43,7 +44,6 @@
           </td>
 
 
-          <!-- lastName -->
           <td >
             <mat-form-field class="example-full-width">
               <input matInput placeholder="Last Name" formControlName="lastName">
@@ -149,12 +149,14 @@
 
       <button type="submit" mat-raised-button color="primary">Submit</button>
     
-    </form>
+    </form> -->
 
 
     <!-- Form -->
-  </mat-card-content>
+  <!-- </mat-card-content> -->
   <!-- <mat-card-actions>
     <button mat-button>Submit</button>
   </mat-card-actions> -->
-</mat-card>
+<!-- </mat-card>  -->
+
+

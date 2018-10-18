@@ -3,9 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MaterialModule } from "./material";
-import { FlexLayoutModule } from "@angular/flex-layout";
+
+
 
 import { AppComponent } from './app.component';
 
@@ -29,13 +28,10 @@ import { TokenInterceptorService } from './core/interceptors/token-interceptor/t
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    MaterialModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    FlexLayoutModule
+    ReactiveFormsModule
   ],
   providers: [AuthService, AuthGuard,
     {
