@@ -1,13 +1,57 @@
 
+
+<!-- theme http://themes.getbootstrap.com/preview/?theme_id=8258 -->
 <!-- As a link -->
-<nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-      </nav>
+<nav class="navbar navbar-expand-sm bg-light justify-content-between nav-anchors">
+    <a class="navbar-brand" href="#">Here2Share</a>
 
 
 
 
+<!-- Shows if user is not logged in -->
+<ul class="navbar-nav" *ngIf="!isLoggedIn">
+    <li class="nav-item">
+      <a routerLink="/login" class="nav-link">Login</a>
+    </li>
+    <li class="nav-item">
+      <a routerLink="/signup" class="nav-link">Signup</a>
+    </li>
+  </ul>
 
+
+  <!-- Shows if user is logged in -->
+  <!-- <ul class="navbar-nav" *ngIf="isLoggedIn">
+
+      <li class="nav-item">
+          <a class="nav-link">Profile</a>
+        </li>
+      <li class="nav-item">
+        <a routerLink="/login" class="nav-link">Store</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/signup" class="nav-link">Shopping Cart</a>
+      </li>
+      <li class="nav-item">
+          <a routerLink="/signup" class="nav-link">Log Out</a>
+        </li>
+
+
+    </ul> -->
+
+<div class="dropdown" *ngIf="isLoggedIn">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Your Account <i class="fa fa-user" aria-hidden="true"></i>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#"><i class="fa fa-id-card" aria-hidden="true"></i> Profile</a>
+    <a class="dropdown-item" href="#"><i class="fa fa-money" aria-hidden="true"></i> Store</a>
+    <a class="dropdown-item" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart</a>
+    <a class="dropdown-item" href="#">Log Out</a>
+  </div>
+</div>
+  </nav>
+
+  
 
 
 <router-outlet></router-outlet> 

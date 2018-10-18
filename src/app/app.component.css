@@ -13,6 +13,12 @@
     /* color: rgb(255, 255, 255); */
 }
 
+.nav-anchors a {
+  
+  color: black !important;
+
+}
+
 
 /* 
 /deep/ .mat-menu-content span {
